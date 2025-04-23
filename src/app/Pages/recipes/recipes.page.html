@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>recipes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!--shows the items from which one can choose from and allows the item to be deselected-->
+  <ion-radio-group [allowEmptySelection]="true" value="options">
+    <ion-list>
+      <ion-radio-group [(ngModel)]="recipe">
+        <ion-item>
+          <ion-label>Irish Stew</ion-label>
+          <ion-radio value="52781" slot="end"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Apple Tart</ion-label>
+          <ion-radio value="52768" slot="end"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Boxty Breakfast</ion-label>
+          <ion-radio value="53036" slot="end"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Ham hock colcannon</ion-label>
+          <ion-radio value="53035" slot="end"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Corned Beef and Cabbage</ion-label>
+          <ion-radio value="52998" slot="end"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+      </ion-list>
+      <ion-button (click)="onButtonClick()">Submit Choice</ion-button>
+  </ion-radio-group>
+  <ion-list>
+    <ion-list>
+      <ion-item *ngFor="let meal of myRecipes">
+        <ion-label>
+          <img [src]="meal.strMealThumb">
+          <h3>{{ meal.strMeal }}</h3>
+          <p>{{ meal.strCategory }}</p>
+          <p>{{ meal.strInstructions}}</p>
+          <p>{{ meal.strYoutube}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-list>
+</ion-content>

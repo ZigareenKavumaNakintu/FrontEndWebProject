@@ -1,20 +1,39 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      VISIT IRELAND
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <hr>
+  <hr>
+  <div>
+    EXPLORE IRELAND THROUGH THE EYES OF THE LOCALS
   </div>
+  <hr>
+  <ion-card [routerLink]="['/recipes']">
+    <img alt="Food" src="https://img.freepik.com/premium-photo/hearty-bowl-beef-stew-with-vegetables-garnished-with-thyme_658005-41114.jpg?w=740" height="600" width="900"/>
+    <ion-card-header>
+      <ion-card-title>Irish Food</ion-card-title>
+      <ion-card-subtitle>Explore the Irish Culture through food</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Here's a small text description for the card content. Nothing more, nothing less.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card [routerLink]="['/songs']">
+    <img  alt="Songs" src="https://img.freepik.com/premium-photo/atmospheric-shot-st-patricks-daythemed-night-concert_973275-157470.jpg?w=740" height="900" width="800"/>
+    <ion-card-header>
+      <ion-card-title>Irish Music</ion-card-title>
+      <ion-card-subtitle>Explore the Irish Culture through Music</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Here's a small text description for the card content. Nothing more, nothing less.
+    </ion-card-content>
+  </ion-card>
 </ion-content>
