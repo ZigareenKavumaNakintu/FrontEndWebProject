@@ -41,12 +41,7 @@ export class RecipesPage implements OnInit {
       const data = await this.dataService.getRecipeData();
       
       // Handle null or empty results
-      this.myRecipes = data.meals || [];
-      
-      if (this.myRecipes.length === 0) {
-        console.warn('No recipes found for:', this.recipe);
-      }
-      
+      this.myRecipes = data.meals || [];     
       console.log('API response:', data);
     } catch (error) {
       console.error('Error loading recipes:', error);
