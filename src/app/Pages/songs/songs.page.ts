@@ -15,13 +15,22 @@ import { DataService } from 'src/app/Services/data.service';
 export class SongsPage implements OnInit {
   title : string="";
   artist :string="";
+  errorMessage: string="";
   songLyrics: any [] =[];
   constructor(private storage:Storage, private dataService: DataService) { }
 
    async ngOnInit() {
-    const data = await this.dataService.getSongData();
-    this.songLyrics = data.lyrics;
-    console.log(this.songLyrics);
+    try{
+      const data = await this.dataService.getSongData();
+      this.songLyrics = data.lyrics.split('\n');
+    
+      console.log(this.songLyrics);
+    }
+    catch(error){
+      console.error('Error loading recipes:', error);
+      this.errorMessage = 'Sorry, we couldn\'t find the lyrics for this song. Please try again later.';
+    }
+    
 
     
   }
@@ -33,6 +42,7 @@ export class SongsPage implements OnInit {
     await this.storage.create();
     await this.storage.set('title',this.title);
     await this.storage.set('artist',this.artist);
+     await this.ngOnInit();
   }
 
 }

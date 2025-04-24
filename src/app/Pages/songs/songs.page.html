@@ -29,5 +29,13 @@
     </ion-item>
   </ion-list>
   <ion-button (click)="OnSubmitClick()">Submit Choice</ion-button>
-  
+
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+    <div *ngFor="let line of songLyrics">
+        <p>{{ line}}</p>
+    </div>
+
 </ion-content>

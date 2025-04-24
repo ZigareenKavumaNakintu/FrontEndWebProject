@@ -31,10 +31,11 @@ export class RecipesPage implements OnInit {
   }
 
   async onButtonClick(){
+   
     console.log(this.recipe);
     await this.storage.create();
     await this.storage.set('recipe',this.recipe);
-
+    await this.loadDataFromApi();
   }
   async loadDataFromApi(){
     try {
