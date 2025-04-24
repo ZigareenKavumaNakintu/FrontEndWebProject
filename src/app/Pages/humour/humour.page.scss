@@ -1,0 +1,22 @@
+
+.meme-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+    padding: 16px;
+  }
+  
+  ion-card {
+    margin: 5px;
+    width: 100%;
+  }
+  ion-button{
+    display: grid;
+    
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }

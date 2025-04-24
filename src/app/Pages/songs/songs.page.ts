@@ -22,20 +22,20 @@ export class SongsPage implements OnInit {
    async ngOnInit() {
     try{
       const data = await this.dataService.getSongData();
+      /*split the words whenever you reach a "\n" so that we can use ngFor and can be showed like noormal lyrics not 
+      one block of code*/
       this.songLyrics = data.lyrics.split('\n');
-    
+      
       console.log(this.songLyrics);
     }
     catch(error){
       console.error('Error loading recipes:', error);
       this.errorMessage = 'Sorry, we couldn\'t find the lyrics for this song. Please try again later.';
     }
-    
-
-    
+       
   }
 
-  
+  //set the variables and call ngOnInit so that the page cansend the new variables to the api
    async OnSubmitClick(){
     console.log(this.title);
     console.log(this.artist);

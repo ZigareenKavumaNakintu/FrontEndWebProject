@@ -22,8 +22,8 @@ export class RecipesPage implements OnInit {
    async ngOnInit() {
       await this.loadDataFromApi();
     }
-    
-
+  
+  
   async ionViewWillEnter(){
     await this.storage.create();
     this.recipe = await this.storage.get('recipe');
@@ -31,22 +31,21 @@ export class RecipesPage implements OnInit {
   }
 
   async onButtonClick(){
-   
     console.log(this.recipe);
     await this.storage.create();
     await this.storage.set('recipe',this.recipe);
+    //call the load dataFromApi so that the new food stuff can replace the old one and new information is got
     await this.loadDataFromApi();
   }
   async loadDataFromApi(){
     try {
       const data = await this.dataService.getRecipeData();
-      
       // Handle null or empty results
       this.myRecipes = data.meals || [];     
       console.log('API response:', data);
     } catch (error) {
       console.error('Error loading recipes:', error);
-      this.myRecipes = [];
+      this.myRecipes = [];//if there is an error the array will then be empty
       
     }
   }

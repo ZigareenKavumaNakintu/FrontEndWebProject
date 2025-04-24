@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Humour</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="meme-grid">
+  <ion-card *ngFor="let m of myJokes">
+    <ion-card-content> 
+      <h1>{{m.captions}} </h1>
+      <img alt="image" src="{{m.url}}" />
+    </ion-card-content>
+  </ion-card>
+  </div>
+  <ion-button (click)="openBrowser()">Would you like to see more jokes? Click here</ion-button>
+  <ion-button (click)="returnHome()">Return to home page</ion-button>
+</ion-content>

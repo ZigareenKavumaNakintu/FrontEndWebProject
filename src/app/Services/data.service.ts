@@ -40,4 +40,10 @@ export class DataService {
    //using encodeURIComponent incase the user inputs spaces or special characters-firstValuefrom changes what the api brings- from Observable to a promise
     return firstValueFrom(this.httpClient.get(`https://api.lyrics.ovh/v1/${encodeURIComponent(this.artist)}/${encodeURIComponent(this.title)}`));
   }
+
+  getHumourData():Observable<any>{
+    return this.httpClient.get('https://www.jsonblob.com/api/jsonblob/1365006482403418112');
+  }
+
+ 
 }
