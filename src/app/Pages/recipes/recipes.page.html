@@ -1,12 +1,13 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>recipes</ion-title>
+   <!--<ion-title>recipes</ion-title>--> 
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <div class="page">
-  <!--shows the items from which one can choose from and allows the item to be deselected-->
+  <!--shows the items from which one can choose from and allows the item to be deselected
+   value will be stored in the storage and directed to the api-->
   <ion-radio-group [allowEmptySelection]="true" value="options">
     <ion-list>
       <ion-radio-group [(ngModel)]="recipe">
@@ -33,9 +34,11 @@
       </ion-radio-group>
       </ion-list>
       <ion-button (click)="onButtonClick()">Submit Choice</ion-button>
+      <ion-button (click)="toHomePage()">Return to HomePage</ion-button>
   </ion-radio-group>
   <ion-list>
     <ion-list>
+      <!--display the details of the recipess-->
       <ion-item *ngFor="let meal of myRecipes">
         <ion-label>
           <img [src]="meal.strMealThumb">
@@ -47,5 +50,6 @@
       </ion-item>
     </ion-list>
   </ion-list>
+ 
 </div>
 </ion-content>

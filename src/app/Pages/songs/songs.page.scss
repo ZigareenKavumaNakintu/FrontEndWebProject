@@ -1,0 +1,23 @@
+.page {
+    background-color: #C4501B;; /* Light grey background */
+    padding: 10px;
+  }
+  
+  ion-item {
+    background-color: #C4501B !important; /* White background for items */
+    margin-bottom: 10px; /* Space between items */
+    border-radius: 5px; /* Rounded corners */
+  }
+  
+  ion-button {
+    margin-top: 20px;
+    background-color: #C4501B; /* Blue background for button */
+    color: white;
+  }
+  p{
+    font-size: 18px;          /* Set the font size */
+    color: #FFE808;           /* Set the text color */
+    line-height: 1.6;         /* Set the line height (space between lines) */
+    text-align:center;      /* Align the text to both left and right edges */
+    margin-bottom: 15px;;
+  }
