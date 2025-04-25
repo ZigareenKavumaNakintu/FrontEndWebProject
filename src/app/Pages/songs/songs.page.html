@@ -29,13 +29,18 @@
     </ion-item>
   </ion-list>
   <ion-button (click)="OnSubmitClick()">Submit Choice</ion-button>
+ 
 
+  <!--if the outcome from the api is error message print out the error message-->
   <div *ngIf="errorMessage" class="error-message">
     {{ errorMessage }}
   </div>
 
-    <div *ngFor="let line of songLyrics">
-        <p>{{ line}}</p>
-    </div>
+  <!--If the outcome from the api are lyrics and not error 404 print our the lyrics in ngFor loop-->
+  <div *ngIf="songLyrics.length && !errorMessage" class="song-lyrics">
+    <p *ngFor="let line of songLyrics">
+      {{ line }}</p>
+  </div>
 
+  <ion-button (click)="toHomePage()">Return to homePage</ion-button>
 </ion-content>

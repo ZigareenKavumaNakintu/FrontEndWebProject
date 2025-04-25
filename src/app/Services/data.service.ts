@@ -32,13 +32,13 @@ export class DataService {
 
   /*Made this a promise instead of an observable because the program has to first get the value from the storage-using await
   for it to continue and get code from the api. */
-  async getSongData():Promise<any> {
+  async getSongData(title: string, artist: string):Promise<any> {
     await this.storage.create();
     this.artist = await this.storage.get('artist');
     this.title = await this.storage.get('title');
 
    //using encodeURIComponent incase the user inputs spaces or special characters-firstValuefrom changes what the api brings- from Observable to a promise
-    return firstValueFrom(this.httpClient.get(`https://api.lyrics.ovh/v1/${encodeURIComponent(this.artist)}/${encodeURIComponent(this.title)}`));
+    return firstValueFrom(this.httpClient.get(`https://api.lyrics.ovh/v1/${encodeURIComponent(artist)}/${encodeURIComponent(title)}`));
   }
 
   getHumourData():Observable<any>{
